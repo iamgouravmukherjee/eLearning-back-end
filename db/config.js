@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-mongoose.connect("mongodb://localhost:3001/test", { useNewUrlParser: true });
+mongoose.connect("mongodb+srv://root:tomatobox91!@cluster0-txkda.gcp.mongodb.net/test", { useNewUrlParser: true });
 const db = mongoose.connection;
 
 db.on('error', (err) => {
