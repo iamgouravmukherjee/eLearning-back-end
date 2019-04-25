@@ -16,7 +16,11 @@ const userSchema = new mongoose.Schema({
    token: {
       type: String,
       required: false
-   }
+   },
+   courses: [{
+      type: mongoose.Schema.Types.ObjectId,
+      ref: 'course'
+   }]
 });
 const users = mongoose.model('user', userSchema);
 

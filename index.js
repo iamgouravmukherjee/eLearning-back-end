@@ -3,6 +3,9 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const cors = require('cors');
 const userRoutes = require('./routes/user');
+const assignmentRoutes = require('./routes/assignment');
+const lessonRoutes = require('./routes/lesson');
+const courseRoutes = require('./routes/course');
 const config = require('./db/config');
 
 const app = express();
@@ -18,6 +21,9 @@ app.use(cors({
 
 app.use(bodyParser.json());
 app.use('/api/user/', userRoutes);
+app.use('/api/assignments', assignmentRoutes);
+app.use('/api/lessons', lessonRoutes);
+app.use('/api/courses', courseRoutes);
 
 server.listen(port, () => {
    console.log(`Server listening on port ${port}`);
